@@ -1,0 +1,33 @@
+import os 
+
+main_dir = "profile"
+ 
+os.mkdir(main_dir)
+
+
+path = os.path.join("profile")
+
+if os.path.exists(path):
+    
+    print(path + ' : exists')
+    if os.path.isdir(path):
+        print(path + ' : is a directory')
+        
+question = input("Would you like to put a file in the profile directory. Please enter yes or no")
+if question == "yes":
+    save_path = "profile"
+    name_of_file = input("what is the name of the file?")
+    completeName = os.path.join(save_path, name_of_file+".txt")
+    file1 = open(completeName, "w")
+    toFile = input("What is your name?")
+    toFile2 = input ("What is your address?")
+    toFile3 = input ("What is your phone number?")
+    file1.close()
+    print ("The following has been stored in the {} file within the profile directory.".format(name_of_file))
+    print ("The name {}".format(toFile))
+    print ("The address {}".format(toFile2))
+    print ("The phone number {}".format(toFile3))
+    
+elif question == "no":
+    
+    exit()
